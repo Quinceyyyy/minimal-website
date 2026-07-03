@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Software Engineer" />
+  <title>Your Name</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Geist+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <aside class="sidebar" id="sidebar" aria-label="Recruiter info">
+
+    <div class="sb-top">
+      <p class="sb-name">Frederick Jeffcock</p>
+      <p class="sb-role">Programmer</p>
+      <span class="sb-badge">Looking for an internship</span>
+    </div>
+
+    <div class="sb-tabs">
+      <button class="sb-tab-btn active" data-tab="about">about</button>
+      <button class="sb-tab-btn" data-tab="experience">experience</button>
+      <button class="sb-tab-btn" data-tab="tools">tools</button>
+    </div>
+
+    <div class="sb-panel active" id="panel-about">
+      <p class="sb-panel-text">Currently studying at Epitech. I enjoy working closer to the hardware, systems programming, graphics (not the visual part).</p>
+
+      <div class="about-section">
+        <p class="about-section-label">education</p>
+        <div class="about-edu-item">
+          <p class="about-edu-title">Epitech</p>
+          <p class="about-edu-detail">MSc in Computer Science · 2025 – 2029</p>
+        </div>
+        <div class="about-edu-item">
+          <p class="about-edu-title">Montpellier University - Richter</p>
+          <p class="about-edu-detail">Economics Undergrad · 2021 – 2023</p>
+        </div>
+      </div>
+
+      <div class="about-section">
+        <p class="about-section-label">misc</p>
+        <div class="chips">
+          <span class="chip">film</span>
+          <span class="chip">manga</span>
+          <span class="chip">League/Dayz</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="sb-panel" id="panel-experience">
+      <ul class="sb-project-list" id="exp-list"></ul>
+    </div>
+
+    <div class="sb-panel" id="panel-tools">
+      <div class="sb-project-list" id="tools-list"></div>
+    </div>
+
+    <div class="sb-links">
+      <a class="sb-link" href="https://www.linkedin.com/in/frederick-jeffcock-0312882b8/" target="_blank" rel="noopener">↗ LinkedIn</a>
+      <a class="sb-link" href="cv.pdf" download>↓ Download CV</a>
+      <button class="sb-link" id="copy-email-btn" type="button">✉ my email</button>
+      <span class="copy-confirm" id="copy-confirm">copied to clipboard</span>
+    </div>
+
+    <p class="sb-footer">In Night City</p>
+  </aside>
+
+  <button class="sidebar-tab" id="sidebar-tab" type="button" aria-label="Toggle info">
+    <span id="tab-label">projects</span>
+  </button>
+
+  <main class="main" id="main">
+    <h1>Quincey</h1>
+    <p class="subtitle">Programmer</p>
+
+    <div class="socials">
+      <a href="https://github.com/Quinceyyyy" target="_blank" rel="noopener">github</a>
+      <a href="https://x.com" target="_blank" rel="noopener">letterboxd</a>
+    </div>
+
+    <section class="section">
+      <h2 class="section-label">uni projects</h2>
+      <ul id="main-list-uni" class="link-list"></ul>
+    </section>
+
+    <section class="section">
+      <h2 class="section-label">personal projects</h2>
+      <ul id="main-list-personal" class="link-list"></ul>
+    </section>
+
+  </main>
+
+  <script type="module" src="src/main.ts"></script>
+</body>
+</html>
