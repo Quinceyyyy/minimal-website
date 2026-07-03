@@ -15,6 +15,7 @@
   --bg: #dbd7d2;
   --green-bg: transparent;
   --green-text: #4a6a1e;
+  --arrow-color: #c2570f;
 }
 
 /* Dark theme — applied when OS prefers dark (and no manual choice),
@@ -28,6 +29,7 @@
     --bg: #0d0d0d;
     --green-bg: transparent;
     --green-text: #8aad5a;
+    --arrow-color: #8aad5a;
   }
 }
 
@@ -39,6 +41,7 @@
   --bg: #0d0d0d;
   --green-bg: transparent;
   --green-text: #8aad5a;
+  --arrow-color: #8aad5a;
 }
 
 html, body { height: 100%; }
@@ -388,5 +391,5 @@ hr.section-divider {
   text-decoration: none;
   transition: color 0.15s;
 }
-.link-list a::before { content: '↗  '; font-size: 13px; color: var(--text-faint); }
+.link-list a::before { content: '↗  '; font-size: 13px; color: var(--arrow-color); }
 .link-list a:hover { color: var(--text); }
