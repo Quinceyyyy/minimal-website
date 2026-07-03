@@ -1,7 +1,5 @@
 
-const EMAIL = 'frederickjeffcock@gmail.com';
-
-export function initSidebar(): void {
+export function initSidebar(email: string): void {
   const sidebar    = document.getElementById('sidebar')       as HTMLElement;
   const tab        = document.getElementById('sidebar-tab')   as HTMLButtonElement;
 
@@ -49,10 +47,10 @@ export function initSidebar(): void {
 
   copyBtn.addEventListener('click', async () => {
     try {
-      await navigator.clipboard.writeText(EMAIL);
+      await navigator.clipboard.writeText(email);
     } catch {
       const el = document.createElement('textarea');
-      el.value = EMAIL;
+      el.value = email;
       el.style.position = 'absolute';
       el.style.left = '-9999px';
       document.body.appendChild(el);

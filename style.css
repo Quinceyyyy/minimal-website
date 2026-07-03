@@ -8,17 +8,19 @@
   --sidebar-width: 280px;
   --transition: 0.28s cubic-bezier(0.4, 0, 0.2, 1);
   --font: 'Geist Mono', monospace;
-  --text: #0f0f0f;
-  --text-muted: #666;
-  --text-faint: #999;
-  --border: rgba(0, 0, 0, 0.10);
-  --bg: #f9f9f7;
+  --text: #2b2620;
+  --text-muted: #6b6152;
+  --text-faint: #9a9081;
+  --border: rgba(60, 48, 24, 0.14);
+  --bg: #dbd7d2;
   --green-bg: transparent;
-  --green-text: #3b6d11;
+  --green-text: #4a6a1e;
 }
 
+/* Dark theme — applied when OS prefers dark (and no manual choice),
+   or when data-theme="dark" is set explicitly. */
 @media (prefers-color-scheme: dark) {
-  :root {
+  :root:not([data-theme]) {
     --text: #d8d8d4;
     --text-muted: #777;
     --text-faint: #444;
@@ -27,6 +29,16 @@
     --green-bg: transparent;
     --green-text: #8aad5a;
   }
+}
+
+:root[data-theme="dark"] {
+  --text: #d8d8d4;
+  --text-muted: #777;
+  --text-faint: #444;
+  --border: rgba(255, 255, 255, 0.08);
+  --bg: #0d0d0d;
+  --green-bg: transparent;
+  --green-text: #8aad5a;
 }
 
 html, body { height: 100%; }
@@ -40,19 +52,47 @@ body {
   align-items: center;
   min-height: 100vh;
   overflow-x: hidden;
+  transition: background 0.3s, color 0.3s;
 }
+
+/* ── Theme toggle ── */
+
+.theme-toggle {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  z-index: 102;
+  font-family: var(--font);
+  font-size: 15px;
+  line-height: 1;
+  color: var(--text-muted);
+  background: var(--bg);
+  border: 0.5px solid var(--border);
+  border-radius: 6px;
+  width: 34px;
+  height: 34px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: color 0.15s, border-color 0.15s;
+}
+
+.theme-toggle:hover { color: var(--text); border-color: var(--text-muted); }
 
 /* ── Sidebar ── */
 
 .sidebar {
   position: fixed;
-  top: 0;
+  top: 50%;
+  transform: translateY(-50%);
   left: calc(-1 * var(--sidebar-width));
   width: var(--sidebar-width);
-  height: 100vh;
+  height: 82vh;
   background: var(--bg);
-  border-right: 0.5px solid var(--border);
-  padding: 40px 24px 32px;
+  border: 0.5px solid var(--border);
+  border-radius: 0 10px 10px 0;
+  padding: 28px 24px 24px;
   display: flex;
   flex-direction: column;
   gap: 20px;
@@ -105,7 +145,8 @@ body {
 /* ── Panels ── */
 
 .sb-panel { display: none; }
-.sb-panel.active { display: block; }
+.sb-panel.active { display: flex; flex-direction: column; flex: 1; min-height: 0; overflow-y: auto; }
+#panel-about.active { gap: 24px; flex: 0 0 auto; overflow: visible; }
 
 /* ── About panel ── */
 
@@ -115,7 +156,7 @@ body {
   line-height: 1.65;
 }
 
-.about-section { margin-top: 18px; }
+.about-section { margin-top: 0; }
 
 .about-section-label {
   font-size: 11px;
@@ -147,6 +188,8 @@ body {
 }
 
 /* ── Experience panel ── */
+
+#panel-experience { padding-top: 24px; }
 
 .exp-item {
   border-left: 1.5px solid var(--border);
@@ -180,7 +223,8 @@ body {
   display: flex;
   flex-direction: column;
   gap: 14px;
-  max-height: 240px;
+  flex: 1;
+  min-height: 0;
   overflow-y: auto;
   padding-right: 4px;
 }
@@ -301,19 +345,16 @@ body {
 /* ── Main ── */
 
 .main {
-  margin-top: 120px;
-  padding: 80px 48px;
-  max-width: 780px;
-  width: 100%;
-  margin-left: auto;
-  margin-right: auto;
+  padding: 48px;
+  max-width: 640px;
+  width: fit-content;
   transition: margin-left var(--transition), padding var(--transition);
 }
 
 .main.shifted { margin-left: var(--sidebar-width); }
 
-h1 { font-size: 28px; font-weight: 500; margin-bottom: 6px; }
-.subtitle { font-size: 18px; color: var(--text-muted); margin-bottom: 24px; }
+h1 { font-size: 42px; font-weight: 500; margin-bottom: 9px; }
+.subtitle { font-size: 27px; color: var(--text-muted); margin-bottom: 36px; }
 
 .socials { display: flex; gap: 24px; margin-bottom: 44px; }
 .socials a {

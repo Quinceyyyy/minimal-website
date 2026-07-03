@@ -1,15 +1,5 @@
 
-import { Project, Experience, ToolGroup } from './data';
-
-export function renderMainList(projects: Project[], listId: string): void {
-  const list = document.getElementById(listId) as HTMLUListElement;
-  if (!list) return;
-  projects.forEach((p) => {
-    const li = document.createElement('li');
-    li.innerHTML = `<a href="${p.url}">${p.name}</a>`;
-    list.appendChild(li);
-  });
-}
+import type { Experience, ToolGroup } from './data';
 
 export function renderExperiences(experiences: Experience[]): void {
   const container = document.getElementById('exp-list') as HTMLElement;
