@@ -1,6 +1,6 @@
 {
   "meta": {
-    "title": "Frederick Jeffcock",
+    "title": "Portfolio",
     "description": "Programmer"
   },
 
@@ -45,8 +45,8 @@
 
   "uniProjects": [
     {
-      "name": "Zappy",
-      "url": "https://github.com/EpitechPGE2-2025/G-YEP-400-MPL-4-1-zappy-2",
+      "name": "Zappy [C - C++ - Python]",
+      "url": "https://github.com/SobshDev/Zappy",
       "date": "systems · 2026",
       "desc": "Simulates life on a planete using clients controlled by ai host on a server."
     },
@@ -58,7 +58,7 @@
     },
     {
       "name": "Cartrige [C]",
-      "url": "https://github.com/EpitechPGE2-2025/G-ING-401-MPL-4-1-cartridge-1",
+      "url": "https://github.com/Quinceyyyy/Cartridge",
       "date": "systems · 2026",
       "desc": "Gameboy game cartrige that runs on both official and emulated hardware."
     }
@@ -66,10 +66,16 @@
 
   "personalProjects": [
     {
-      "name": "Kaiman",
+      "name": "Kaiman [Rust]",
       "url": "https://github.com/Quinceyyyy/Kaiman-Pub",
       "date": "2025",
       "desc": "Web scraper targeting manga scan sites."
+    },
+    {
+      "name": "CRISP8 [C]",
+      "url": "https://github.com/Quinceyyyy/CRISP8",
+      "date": "2025",
+      "desc": "CHIP8 Emulator."
     }
   ],
 
