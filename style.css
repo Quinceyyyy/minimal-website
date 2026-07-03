@@ -304,6 +304,7 @@ body {
 }
 
 .sb-link:hover { color: var(--text); }
+.sb-arrow { color: var(--arrow-color); }
 
 .copy-confirm {
   font-size: 13px;
