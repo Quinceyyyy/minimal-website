@@ -9,15 +9,26 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Geist+Mono:wght@400;500&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="style.css" />
+  <script>
+    (function () {
+      var t = localStorage.getItem('theme');
+      if (t !== 'light' && t !== 'dark') {
+        t = matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+      }
+      document.documentElement.setAttribute('data-theme', t);
+    })();
+  </script>
 </head>
 <body>
+
+  <button class="theme-toggle" id="theme-toggle" type="button" aria-label="Toggle theme"></button>
 
   <aside class="sidebar" id="sidebar" aria-label="Recruiter info">
 
     <div class="sb-top">
-      <p class="sb-name">Frederick Jeffcock</p>
-      <p class="sb-role">Programmer</p>
-      <span class="sb-badge">Looking for an internship</span>
+      <p class="sb-name"></p>
+      <p class="sb-role"></p>
+      <span class="sb-badge"></span>
     </div>
 
     <div class="sb-tabs">
@@ -27,27 +38,14 @@
     </div>
 
     <div class="sb-panel active" id="panel-about">
-      <p class="sb-panel-text">Currently studying at Epitech. I enjoy working closer to the hardware, systems programming, graphics (not the visual part).</p>
+      <p class="sb-panel-text"></p>
 
       <div class="about-section">
         <p class="about-section-label">education</p>
-        <div class="about-edu-item">
-          <p class="about-edu-title">Epitech</p>
-          <p class="about-edu-detail">MSc in Computer Science · 2025 – 2029</p>
-        </div>
-        <div class="about-edu-item">
-          <p class="about-edu-title">Montpellier University - Richter</p>
-          <p class="about-edu-detail">Economics Undergrad · 2021 – 2023</p>
-        </div>
       </div>
 
       <div class="about-section">
         <p class="about-section-label">misc</p>
-        <div class="chips">
-          <span class="chip">film</span>
-          <span class="chip">manga</span>
-          <span class="chip">League/Dayz</span>
-        </div>
       </div>
     </div>
 
@@ -60,38 +58,25 @@
     </div>
 
     <div class="sb-links">
-      <a class="sb-link" href="https://www.linkedin.com/in/frederick-jeffcock-0312882b8/" target="_blank" rel="noopener">↗ LinkedIn</a>
-      <a class="sb-link" href="cv.pdf" download>↓ Download CV</a>
+      <a class="sb-link" href="#" target="_blank" rel="noopener">↗ LinkedIn</a>
+      <a class="sb-link" id="cv-en" href="#" download>↓ Download CV (EN)</a>
+      <a class="sb-link" id="cv-fr" href="#" download>↓ Download CV (FR)</a>
       <button class="sb-link" id="copy-email-btn" type="button">✉ my email</button>
       <span class="copy-confirm" id="copy-confirm">copied to clipboard</span>
     </div>
 
-    <p class="sb-footer">In Night City</p>
+    <p class="sb-footer"></p>
   </aside>
 
   <button class="sidebar-tab" id="sidebar-tab" type="button" aria-label="Toggle info">
-    <span id="tab-label">projects</span>
+    <span id="tab-label">about me</span>
   </button>
 
   <main class="main" id="main">
-    <h1>Quincey</h1>
-    <p class="subtitle">Programmer</p>
+    <h1></h1>
+    <p class="subtitle"></p>
 
-    <div class="socials">
-      <a href="https://github.com/Quinceyyyy" target="_blank" rel="noopener">github</a>
-      <a href="https://x.com" target="_blank" rel="noopener">letterboxd</a>
-    </div>
-
-    <section class="section">
-      <h2 class="section-label">uni projects</h2>
-      <ul id="main-list-uni" class="link-list"></ul>
-    </section>
-
-    <section class="section">
-      <h2 class="section-label">personal projects</h2>
-      <ul id="main-list-personal" class="link-list"></ul>
-    </section>
-
+    <div class="socials"></div>
   </main>
 
   <script type="module" src="src/main.ts"></script>
