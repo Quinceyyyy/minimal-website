@@ -7,8 +7,8 @@
   "sidebar": {
     "name": "Frederick Jeffcock",
     "role": "Programmer",
-    "badge": "Looking for an internship",
-    "about": "Currently studying at Epitech. I enjoy working closer to the hardware, systems programming, graphics (not the visual part).",
+    "badge": "Looking for an internship from late March until July/August",
+    "about": "3rd year Epitech student focused on low-level systems. I've built a CHIP8 interpreter and I'm currently writing a RISC-V32I emulator. Since this isn't covered in my coursework, I'm self-studying EE fundamentals, embedded firmware, and Verilog/HDL to work toward a career in the semiconductor industry.",
     "education": [
       {
         "title": "Epitech",
